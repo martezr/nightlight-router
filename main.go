@@ -16,17 +16,10 @@ import (
 	"github.com/vmware/vmw-guestinfo/vmcheck"
 )
 
-// guestinfo.nightlight-router.ip
-// guestinfo.nightlight-router.mask
-// guestinfo.nightlight-router.gw
-// guestinfo.nightlight-router.dns1
-// guestinfo.nightlight-router.dns2
-
 func main() {
-
 	ipaddr := "10.0.0.62"
-	mask := ""
-	gw := ""
+	mask := "255.255.255.0"
+	gw := "10.0.0.1"
 	//dns1 := ""
 	//dns2 := ""
 
@@ -35,7 +28,6 @@ func main() {
 	if err != nil {
 		fmt.Println(err)
 	}
-	//fmt.Println("ROUTING VALUE: ", out)
 
 	isVM, err := vmcheck.IsVirtualWorld(true)
 	if err != nil {
